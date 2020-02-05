@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>Digit anything</p>
+    <input id="inputArea" type="text" oninput="validateIdMinMax(this.value,this.id,0,99)">
+
+    <div>
+        <div id="plus" style="font-size: xx-large; font-weight: bolder; cursor: pointer;"
+            onmousedown="btnFunc(true,'+')" onmouseup="btnFunc(false)">+</div>
+    </div>
+    <div>
+
+        <div id="minus" style="font-size: xx-large; font-weight: bolder; cursor: pointer;"
+            onmousedown="btnFunc(true,'-')" onmouseup="btnFunc(false)">-</div>
+    </div>
+
+    <script src="validate.js"></script>
+    <script src="buttons.js"></script>
+
+</body>
+
+</html>

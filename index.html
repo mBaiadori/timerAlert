@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css">
+    <title>workTimmer</title>
+</head>
+
+<body>
+    <div class="main">
+        <audio id="sound">
+            <source src="alert.mp3" />
+        </audio>
+
+        <h1>Work Timmer</h1>
+
+        <div id="counter">00:00</div>
+
+        <div id="InputWork">
+            <h3>set Work Time</h3>
+            <input id="workTime" type="text" value="10" oninput="validateIdMinMax(this.value,this.id,0,99)" autofocus />
+            <div id="plus" onmousedown="btnFunc(true,'+','workTime')" onmouseup="btnFunc(false,'','workTime')">+</div>
+            <div id="minus" onmousedown="btnFunc(true,'-','workTime')" onmouseup="btnFunc(false,'','workTime')">-</div>
+        </div>
+
+        <div id="InputRest">
+            <h3>set Rest Time</h3>
+            <input id="restTime" type="text" value="1" oninput="validateIdMinMax(this.value,this.id,0,99)" />
+            <div id="plus" onmousedown="btnFunc(true,'+','restTime')" onmouseup="btnFunc(false,'','restTime')">+</div>
+            <div id="minus" onmousedown="btnFunc(true,'-','restTime')" onmouseup="btnFunc(false,'','restTime')">-</div>
+        </div>
+
+        <div id="alert">Set & Press Start</div>
+
+        <div id="buttonStart" type="text" value="Start" onclick="Start()">Start</div>
+    </div>
+</body>
+
+
+<script src="index.js"></script>
+<script src="./MyFunctions/buttons.js"></script>
+<script src="./MyFunctions/validate.js"></script>
+
+</html>

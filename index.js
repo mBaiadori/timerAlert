@@ -29,25 +29,31 @@ function ReStart() {
   alertCounter = 0;
   minutes = inputTime * 60;
   seconds = 60;
-  if (inputTime < 10) divCounter.innerHTML = `${inputTime}:00`;
+  if (inputTime < 10) divCounter.innerHTML = `0${inputTime}:00`;
   else divCounter.innerHTML = `${inputTime}:00`;
 }
 
 function startTemporizer(state) {
-  if (state == true) temporizer = setInterval(() => decreaser(), 100);
+  if (state == true) temporizer = setInterval(() => decreaser(), 70);
   else clearInterval(temporizer);
 }
 
 function decreaser() {
   minutes--;
+  console.log(inputTime);
   seconds--;
   if (seconds < 0) {
     seconds = 59;
     inputTime--;
   }
-  if (inputTime < 10) divCounter.innerHTML = `0${inputTime - 1}:${seconds}`;
-  else if (seconds < 10) divCounter.innerHTML = `${inputTime - 1}:0${seconds}`;
-  else divCounter.innerHTML = `${inputTime - 1}:${seconds}`;
+  if (inputTime >= 10 && seconds >= 10)
+    divCounter.innerHTML = `${inputTime - 1}:${seconds}`;
+  if (inputTime >= 10 && seconds < 10)
+    divCounter.innerHTML = `${inputTime - 1}:0${seconds}`;
+  if (inputTime < 11 && seconds >= 10)
+    divCounter.innerHTML = `0${inputTime - 1}:${seconds}`;
+  if (inputTime < 11 && seconds < 10)
+    divCounter.innerHTML = `0${inputTime - 1}:0${seconds}`;
 
   if (minutes == 0) {
     divCounter.innerHTML = `00:00`;

@@ -9,5 +9,5 @@ function validateIdMinMax(inputValue, id, min, max) {
         document.getElementById(id).value = max
         window.alert(`Select values ${min} or ${max}`)
     }
-    console.log(inputValue)
+    //console.log(inputValue)
 }
